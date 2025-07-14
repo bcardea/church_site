@@ -19,8 +19,8 @@ export function MainNav({
         className="flex items-center mr-6"
       >
         <Image
-          src="https://ext.same-assets.com/761693401/4214873279.png"
-          alt="Elevation Church"
+          src="https://storage.googleapis.com/msgsndr/X3eoYfldwznzUvmpfctr/media/67c5b50b9778f6800e21e53b.svg"
+          alt="Lifepoint Hampton Roads"
           width={120}
           height={40}
           className="h-7 md:h-8 w-auto"

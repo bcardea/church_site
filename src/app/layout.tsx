@@ -9,8 +9,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Elevation Church - Clone',
-  description: 'A clone of Elevation Church website created for educational purposes',
+  title: 'Lifepoint Hampton Roads',
+  description: 'Lifepoint Hampton Roads - A place to grow in faith and community',
 };
 
 export default function RootLayout({

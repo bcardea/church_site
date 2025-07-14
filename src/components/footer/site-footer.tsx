@@ -75,15 +75,15 @@ export function SiteFooter() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <Image
-              src="https://ext.same-assets.com/761693401/4214873279.png"
-              alt="Elevation Church"
+              src="https://storage.googleapis.com/msgsndr/X3eoYfldwznzUvmpfctr/media/67c5b50b9778f6800e21e53b.svg"
+              alt="Lifepoint Hampton Roads"
               width={120}
               height={32}
               className="h-8 w-auto"
             />
           </div>
           <p className="text-white/50 text-sm">
-            © {new Date().getFullYear()} Elevation Church. All Rights Reserved.
+            © {new Date().getFullYear()} Lifepoint Hampton Roads. All Rights Reserved.
           </p>
         </div>
       </div>
