@@ -110,12 +110,14 @@ export function MainNav({
           href="/our-why"
           className="text-sm font-medium transition-colors hover:text-primary"
         >
-          Our Why
+          OUR WHY
         </Link>
         
         <Link
-          href="/watch"
+          href="https://www.youtube.com/@Lifepoint_HamptonRoads"
           className="text-sm font-medium transition-colors hover:text-primary"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           WATCH
         </Link>
