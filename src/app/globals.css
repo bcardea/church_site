@@ -162,3 +162,16 @@
 .embla__button--next {
   right: 1rem;
 }
+
+/* Add this CSS to your global styles for the scrollbar-hide utility */
+/*
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+*/
