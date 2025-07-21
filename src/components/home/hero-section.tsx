@@ -46,7 +46,9 @@ export async function HeroSection() {
       <div className="relative z-10 container h-full flex flex-col justify-end pb-16">
         <div className="max-w-3xl text-white">
           <h1 className="uppercase tracking-tight text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-md">
-            {heroContent.title}
+            {heroContent.title.split(' ').slice(0, -1).join(' ')}
+            {' '}
+            <span className="font-light">{heroContent.title.split(' ').pop()}</span>
           </h1>
           {heroContent.subtitle && (
             <p className="mt-4 text-xl font-medium">{heroContent.subtitle}</p>

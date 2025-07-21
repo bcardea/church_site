@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { Menu, ChevronDown, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -46,11 +46,57 @@ function DropdownMenu({ label, items, isOpen, onToggle }: DropdownMenuProps) {
   );
 }
 
+function MobileNav({ isOpen, onLinkClick, aboutUsItems, getConnectedItems }: { isOpen: boolean; onLinkClick: () => void; aboutUsItems: any[]; getConnectedItems: any[] }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-95 z-50 flex flex-col items-center justify-center text-white md:hidden">
+      <button onClick={onLinkClick} className="absolute top-4 right-4 text-white">
+        <X className="h-8 w-8" />
+      </button>
+      <nav className="flex flex-col items-center space-y-8 text-center">
+        <Link href="/im-new" className="text-2xl font-medium" onClick={onLinkClick}>I'M NEW</Link>
+        <div className="flex flex-col items-center space-y-4">
+          <h3 className="text-2xl font-medium">ABOUT US</h3>
+          {aboutUsItems.map(item => (
+            <Link key={item.href} href={item.href} className="text-lg text-white/80" onClick={onLinkClick}>{item.label}</Link>
+          ))}
+        </div>
+        <Link href="/our-why" className="text-2xl font-medium" onClick={onLinkClick}>OUR WHY</Link>
+        <Link href="https://www.youtube.com/@Lifepoint_HamptonRoads" className="text-2xl font-medium" target="_blank" rel="noopener noreferrer" onClick={onLinkClick}>WATCH</Link>
+        <div className="flex flex-col items-center space-y-4">
+          <h3 className="text-2xl font-medium">GET CONNECTED</h3>
+          {getConnectedItems.map(item => (
+            <Link key={item.href} href={item.href} className="text-lg text-white/80" target={item.href.startsWith('http') ? '_blank' : '_self'} rel="noopener noreferrer" onClick={onLinkClick}>{item.label}</Link>
+          ))}
+        </div>
+        <Link href="https://lifepointhamptonroads.churchcenter.com/giving" className="text-2xl font-medium" target="_blank" rel="noopener noreferrer" onClick={onLinkClick}>GIVE</Link>
+      </nav>
+    </div>
+  );
+}
+
 export function MainNav({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMobileMenuOpen]);
+
+  const handleMobileMenuToggle = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const handleDropdownToggle = (dropdownName: string) => {
     setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
@@ -137,9 +183,16 @@ export function MainNav({
         </Link>
       </div>
 
-      <Button variant="ghost" size="icon" className="md:hidden ml-auto">
+      <Button variant="ghost" size="icon" className="md:hidden ml-auto" onClick={handleMobileMenuToggle}>
         <Menu className="h-5 w-5" />
       </Button>
+
+      <MobileNav 
+        isOpen={isMobileMenuOpen} 
+        onLinkClick={handleMobileMenuToggle} 
+        aboutUsItems={aboutUsItems} 
+        getConnectedItems={getConnectedItems} 
+      />
     </nav>
   );
 }
