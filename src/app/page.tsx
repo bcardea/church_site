@@ -3,8 +3,9 @@ import { HeroSection } from "@/components/home/hero-section";
 import { ExperienceSection } from "@/components/home/experience-section";
 import { ConnectSection } from "@/components/home/connect-section";
 import { MinistrySection } from "@/components/home/ministry-section";
-import { GetInvolvedSection } from "@/components/home/get-involved-section";
 import { SiteFooter } from "@/components/footer/site-footer";
+
+export const revalidate = 0;
 
 export default function HomePage() {
   return (
@@ -15,7 +16,6 @@ export default function HomePage() {
         <ExperienceSection />
         <ConnectSection />
         <MinistrySection />
-        <GetInvolvedSection />
       </main>
       <SiteFooter />
     </div>

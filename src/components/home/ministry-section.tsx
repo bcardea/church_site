@@ -60,19 +60,19 @@ export function MinistrySection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <MinistryCard
             image=""
-            title="Connecting people. Activating faith."
+            title="Join the Team, Live out your Purpose"
             tagline=""
-            ministry="eGroup Ministry"
-            linkHref="/egroups/about"
+            ministry="Join the Team"
+            linkHref="/join-the-team"
             bgColor="bg-gradient-to-br from-blue-800 to-blue-950"
             textColor="text-white"
           />
           <MinistryCard
             image=""
-            title="Making an impact — locally and globally."
+            title="Find your next group"
             tagline=""
-            ministry="Outreach Ministry"
-            linkHref="/outreach"
+            ministry="Small Groups"
+            linkHref="/small-groups"
             bgColor="bg-gradient-to-br from-green-600 to-green-800"
             textColor="text-white"
           />
@@ -81,29 +81,29 @@ export function MinistrySection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <MinistryCard
             image=""
-            title="Partnering with parents to develop kids' faith."
+            title="Developing the next generation for Jesus"
             tagline=""
-            ministry="Children's Ministry"
-            linkHref="/ekidz"
+            ministry="Kidspoint"
+            linkHref="/kidspoint"
             bgColor="bg-gradient-to-br from-cyan-400 to-cyan-600"
             textColor="text-white"
           />
           <MinistryCard
             image=""
-            title="Developing youth who influence culture."
+            title="Youth: You are the NOW Generation"
             tagline=""
-            ministry="Youth Ministry"
+            ministry="Youth"
             linkHref="/youth"
             bgColor="bg-gradient-to-br from-gray-800 to-black"
             textColor="text-white"
           />
           <MinistryCard
             image=""
-            title="Building community. Deepening faith."
+            title="Serve the local community"
             tagline=""
-            ministry="Young Adult Ministry"
-            linkHref="/young-adults"
-            bgColor="bg-gradient-to-br from-orange-400 to-orange-600"
+            ministry="Outreach"
+            linkHref="/outreach"
+            bgColor="bg-gradient-to-br from-red-600 to-red-800"
             textColor="text-white"
           />
         </div>
@@ -111,10 +111,10 @@ export function MinistrySection() {
         <div className="w-full">
           <MinistryCard
             image=""
-            title="Inspiring your faith and creating an atmosphere of worship to God."
+            title="Get connected with Lifepoint"
             tagline=""
-            ministry="Worship Ministry"
-            linkHref="https://elevationworship.com"
+            ministry="Connect"
+            linkHref="/connect-with-us"
             bgColor="bg-gradient-to-br from-gray-800 to-black"
             textColor="text-white"
           />

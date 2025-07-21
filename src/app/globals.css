@@ -95,3 +95,70 @@
 .container-wide {
   @apply container max-w-[1400px] px-4 md:px-8;
 }
+
+/* Embla Carousel Styles */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 33.3333%;
+  min-width: 0;
+  padding-left: 1rem; /* Corresponds to -ml-4 in the original CarouselContent */
+}
+
+@media (max-width: 768px) {
+  .embla__slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (max-width: 640px) {
+  .embla__slide {
+    flex: 0 0 100%;
+  }
+}
+
+.embla__button {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  touch-action: manipulation;
+  display: inline-flex;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  z-index: 1;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.2s;
+}
+
+.embla__button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.embla__button:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.embla__button--prev {
+  left: 1rem;
+}
+
+.embla__button--next {
+  right: 1rem;
+}

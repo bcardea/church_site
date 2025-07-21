@@ -34,90 +34,57 @@ export function TemplateC({
     <div className="min-h-screen flex flex-col">
       <SiteHeader />
       
-      {/* Sub Navigation with colored background */}
-      <nav className="bg-elevation-dark text-white sticky top-16 z-40">
-        <div className="container">
-          <div className="flex items-center space-x-8 py-4 overflow-x-auto">
-            {subNavItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="text-sm font-medium text-white/70 hover:text-white whitespace-nowrap transition-colors relative group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-elevation-orange transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
+      {/* Sub Navigation */}
+      {subNavItems && subNavItems.length > 0 && (
+        <nav className="bg-gray-50 border-b sticky top-16 z-40">
+          <div className="container">
+            <div className="flex items-center space-x-8 py-3 overflow-x-auto">
+              {subNavItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary whitespace-nowrap transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      )}
 
       <main className="flex-1">
-        {/* Hero Section - Minimal with large text */}
-        <section className="py-24 bg-white relative overflow-hidden">
-          {/* Background pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            }}></div>
-          </div>
-          
-          <div className="container relative z-10">
-            <div className="max-w-5xl mx-auto">
+        {/* Hero Section */}
+        <section className="py-40 bg-white">
+          <div className="container">
+            <div className="max-w-4xl mx-auto text-center">
               {subtitle && (
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-6 text-center">
+                <p className="text-sm font-semibold uppercase tracking-wide text-page-accent mb-4">
                   {subtitle}
                 </p>
               )}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 text-gray-900 text-center leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900">
                 {title}
               </h1>
               {description && (
-                <p className="text-xl text-muted-foreground mb-10 max-w-4xl mx-auto text-center leading-relaxed">
+                <p className="text-lg mb-8 max-w-3xl mx-auto text-muted-foreground">
                   {description}
                 </p>
               )}
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                {ctaText && ctaHref && (
-                  <Button asChild size="lg" className="rounded-full px-8">
-                    <Link href={ctaHref}>{ctaText}</Link>
-                  </Button>
-                )}
-                {heroImage && (
-                  <div className="mt-8 sm:mt-0">
-                    <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-primary/20">
-                      <img
-                        src={heroImage}
-                        alt={title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                )}
-              </div>
+              {ctaText && ctaHref && (
+                <Button asChild size="lg" className="rounded-full">
+                  <Link href={ctaHref}>{ctaText}</Link>
+                </Button>
+              )}
             </div>
           </div>
         </section>
 
-        {/* Featured image section */}
-        {heroImage && (
-          <section className="py-0">
-            <div className="container">
-              <div className="aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src={heroImage}
-                  alt={title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* Content */}
-        <div className="py-20">
-          {children}
+        <div className="py-16">
+          <div className="container">
+            {children}
+          </div>
         </div>
       </main>
       

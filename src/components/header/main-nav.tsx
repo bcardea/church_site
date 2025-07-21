@@ -57,19 +57,19 @@ export function MainNav({
   };
 
   const aboutUsItems = [
-    { label: "Our Beliefs", href: "/about/beliefs" },
-    { label: "Our Pastors", href: "/about/pastors" },
-    { label: "Our Mission", href: "/about/mission" },
+    { label: "Our Beliefs", href: "/our-beliefs" },
+    { label: "Our Pastors", href: "/our-pastors" },
+    { label: "Our Mission", href: "/our-mission" },
   ];
 
   const getConnectedItems = [
-    { label: "Join the Team", href: "/get-connected/join-team" },
-    { label: "Small Groups", href: "/get-connected/small-groups" },
-    { label: "Kidspoint", href: "/get-connected/kidspoint" },
-    { label: "Youth", href: "/get-connected/youth" },
-    { label: "Outreach", href: "/get-connected/outreach" },
-    { label: "Baptism", href: "/get-connected/baptism" },
-    { label: "Connect with Us", href: "/get-connected/connect" },
+    { label: "Join the Team", href: "/join-the-team" },
+    { label: "Small Groups", href: "https://lifepointhamptonroads.churchcenter.com/groups/small-groups?enrollment=open_signup%2Crequest_to_join&filter=enrollment" },
+    { label: "Kidspoint", href: "/kidspoint" },
+    { label: "Youth", href: "/youth" },
+    { label: "Outreach", href: "/outreach" },
+    { label: "Baptism", href: "/baptism" },
+    { label: "Connect with Us", href: "/connect" },
   ];
 
   return (
@@ -128,7 +128,7 @@ export function MainNav({
         />
         
         <Link
-          href="/give"
+          href="https://lifepointhamptonroads.churchcenter.com/giving"
           className="text-sm font-medium transition-colors hover:text-primary"
         >
           GIVE

@@ -53,7 +53,7 @@ export function TemplateA({
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-100 to-gray-200 py-20">
+        <section className="relative bg-gradient-to-br from-gray-100 to-gray-200 py-40">
           {heroImage && (
             <>
               <div className="absolute inset-0 z-0">
@@ -69,7 +69,7 @@ export function TemplateA({
           <div className="container relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               {subtitle && (
-                <p className={`text-sm font-semibold uppercase tracking-wide mb-4 ${heroImage ? 'text-white/80' : 'text-primary'}`}>
+                <p className={`text-sm font-semibold uppercase tracking-wide mb-4 ${heroImage ? 'text-white/80' : 'text-page-accent'}`}>
                   {subtitle}
                 </p>
               )}
@@ -92,7 +92,9 @@ export function TemplateA({
 
         {/* Content */}
         <div className="py-16">
-          {children}
+          <div className="container">
+            {children}
+          </div>
         </div>
       </main>
       

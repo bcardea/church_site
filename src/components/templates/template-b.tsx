@@ -53,7 +53,7 @@ export function TemplateB({
 
       <main className="flex-1">
         {/* Hero Section - Side by side layout */}
-        <section className="py-20 bg-white">
+        <section className="py-40 bg-white">
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
