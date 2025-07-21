@@ -1,9 +1,6 @@
-[build]
-  command = "bun run build"
-  publish = "build"
-
-[build.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+# This file is intentionally minimal.
+# The Netlify Next.js plugin will automatically detect and apply the correct
+# build command (`next build`) and publish directory (`.next`).
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
