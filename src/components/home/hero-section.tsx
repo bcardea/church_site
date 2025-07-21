@@ -28,7 +28,7 @@ export async function HeroSection() {
   }
 
   return (
-    <section className="relative w-full h-[45vh] overflow-hidden">
+    <section className="relative w-full h-[70vh] md:aspect-[16/9] md:h-auto overflow-hidden">
       <div className="absolute inset-0 z-0">
         {heroContent.image_url && (
           <Image
