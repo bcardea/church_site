@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server';
+import { supabaseAdmin } from '@/lib/supabase/admin';
 import { TemplateA } from '@/components/templates/template-a';
 import { TemplateB } from '@/components/templates/template-b';
 import { TemplateC } from '@/components/templates/template-c';
@@ -156,8 +157,13 @@ function renderContentBlock(block: ContentBlock, index: number) {
 
 
 export async function generateStaticParams() {
-  const supabase = createClient();
-  const { data: pages } = await supabase.from('pages').select('slug');
+  const { data: pages, error } = await supabaseAdmin.from('pages').select('slug');
+
+  if (error) {
+    console.error('Error fetching slugs for static generation:', error);
+    return [];
+  }
+
   return pages?.map(({ slug }) => ({ slug })) || [];
 }
 
