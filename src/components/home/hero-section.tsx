@@ -28,7 +28,7 @@ export async function HeroSection() {
   }
 
   return (
-    <section className="relative w-full h-[45vh] overflow-hidden flex flex-col">
+    <section className="relative w-full h-[45vh] overflow-hidden">
       <div className="absolute inset-0 z-0">
         {heroContent.image_url && (
           <Image
@@ -43,25 +43,27 @@ export async function HeroSection() {
         <div className="absolute inset-0 bg-black bg-opacity-40" />
       </div>
 
-      <div className="relative z-10 container mt-auto pb-16">
-        <div className="max-w-3xl text-white">
-          <h1 className="uppercase tracking-tight text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-md">
-            {heroContent.title}
-          </h1>
-          {heroContent.subtitle && (
-            <p className="mt-4 text-xl font-medium">{heroContent.subtitle}</p>
-          )}
-          <p className="text-base opacity-90">Watch the latest sermon</p>
+      <div className="relative z-10 h-full flex items-end">
+        <div className="container pb-16">
+          <div className="max-w-3xl text-white">
+            <h1 className="uppercase tracking-tight text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-md">
+              {heroContent.title}
+            </h1>
+            {heroContent.subtitle && (
+              <p className="mt-4 text-xl font-medium">{heroContent.subtitle}</p>
+            )}
+            <p className="text-base opacity-90">Watch the latest sermon</p>
 
-          {heroContent.cta_text && heroContent.cta_url && (
-            <div className="flex flex-wrap gap-4 mt-6">
-              <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-white/90">
-                <Link href={heroContent.cta_url}>
-                  {heroContent.cta_text}
-                </Link>
-              </Button>
-            </div>
-          )}
+            {heroContent.cta_text && heroContent.cta_url && (
+              <div className="flex flex-wrap gap-4 mt-6">
+                <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-white/90">
+                  <Link href={heroContent.cta_url}>
+                    {heroContent.cta_text}
+                  </Link>
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
