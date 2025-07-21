@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabaseclient';
+import { createClient } from '@/lib/supabase/server';
 import { TemplateA } from '@/components/templates/template-a';
 import { TemplateB } from '@/components/templates/template-b';
 import { TemplateC } from '@/components/templates/template-c';
@@ -111,6 +111,7 @@ interface PageData {
 }
 
 async function getPageData(slug: string): Promise<PageData | null> {
+  const supabase = createClient();
   const { data, error } = await supabase
     .from('pages')
     .select('*')
@@ -155,6 +156,12 @@ interface DynamicPageProps {
   params: {
     slug: string;
   };
+}
+
+export async function generateStaticParams() {
+  const supabase = createClient();
+  const { data: pages } = await supabase.from('pages').select('slug');
+  return pages?.map(({ slug }) => ({ slug })) || [];
 }
 
 // Component to dynamically select and render the correct template
@@ -210,13 +217,12 @@ function PageTemplate({ data }: { data: PageData }) {
   );
 }
 
-export default async function DynamicPage({ params: { slug } }: DynamicPageProps) {
-  // Handle favicon requests gracefully
-  if (slug === 'favicon.ico') {
+export default async function DynamicPage({ params }: DynamicPageProps) {
+  if (params.slug === 'favicon.ico') {
     return notFound();
   }
 
-  const pageData = await getPageData(slug);
+  const pageData = await getPageData(params.slug);
 
   if (!pageData) {
     return notFound();
