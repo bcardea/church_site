@@ -3,6 +3,7 @@ import { TemplateA } from '@/components/templates/template-a';
 import { TemplateB } from '@/components/templates/template-b';
 import { TemplateC } from '@/components/templates/template-c';
 import { notFound } from 'next/navigation';
+import type { PageProps } from '@/types/page-props';
 import { FaqBlock } from '@/components/content-blocks/faq-block';
 import { CtaBlock } from '@/components/content-blocks/cta-block';
 import { TextBlock } from '@/components/content-blocks/text-block';
@@ -152,11 +153,7 @@ function renderContentBlock(block: ContentBlock, index: number) {
   }
 }
 
-interface DynamicPageProps {
-  params: {
-    slug: string;
-  };
-}
+
 
 export async function generateStaticParams() {
   const supabase = createClient();
@@ -217,7 +214,7 @@ function PageTemplate({ data }: { data: PageData }) {
   );
 }
 
-export default async function DynamicPage({ params }: DynamicPageProps) {
+export default async function DynamicPage({ params }: PageProps) {
   if (params.slug === 'favicon.ico') {
     return notFound();
   }
