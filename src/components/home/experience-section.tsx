@@ -26,7 +26,7 @@ export function ExperienceSection() {
   return (
     <section className="py-20 bg-white">
       <div className="container text-left">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Welcome Home.</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Welcome <span className="font-light">Home.</span></h2>
         <p className="text-lg text-muted-foreground max-w-3xl mb-12">
           No matter where you are, online or in person, become a part of all God is doing.
         </p>
