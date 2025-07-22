@@ -35,26 +35,28 @@ export function TemplateA({
       <SiteHeader />
       
       {/* Sub Navigation */}
-      <nav className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-16 z-40 shadow-sm">
-        <div className="container">
-          <div className="flex items-center gap-1 py-4 overflow-x-auto scrollbar-hide">
-            {subNavItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 whitespace-nowrap transition-all duration-200 rounded-lg hover:bg-gray-100/70 relative group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200" />
-              </Link>
-            ))}
+      {subNavItems.length > 0 && (
+        <nav className="border-b border-gray-200/50 z-30">
+          <div className="container">
+            <div className="flex items-center gap-1 py-4 overflow-x-auto scrollbar-hide">
+              {subNavItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-900 whitespace-nowrap transition-all duration-200 rounded-lg hover:bg-gray-100/70 relative group"
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gray-900 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200" />
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      )}
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 py-32 md:py-40 lg:py-48 overflow-hidden">
+        <section className="relative bg-white py-32 md:py-40 lg:py-48 overflow-hidden">
           {/* Decorative background pattern */}
           <div className="absolute inset-0 opacity-[0.03]">
             <div className="absolute inset-0" style={{
@@ -125,8 +127,7 @@ export function TemplateA({
             </div>
           </div>
           
-          {/* Subtle gradient overlay at bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+          {/* No gradient overlay */}
         </section>
 
         {/* Content */}

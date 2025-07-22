@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Portal } from "@/components/ui/portal";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -30,27 +31,24 @@ export function MobileNav({ isOpen, onClose, navItems }: MobileNavProps) {
     };
   }, [isOpen]);
 
+  if (!isOpen) return null;
+  
   return (
-    <>
+    <Portal>
       {/* Backdrop */}
       <div
-        className={
-          "fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity " +
-          (isOpen ? "opacity-100" : "opacity-0 pointer-events-none")
-        }
+        className="fixed inset-0 z-[9998] bg-black/40 backdrop-blur-sm transition-opacity"
         onClick={onClose}
       />
 
-      {/* Drawer */}
-      <aside
-        className={
-          "fixed top-0 left-0 z-50 h-full w-full sm:w-4/5 sm:max-w-sm bg-white bg-opacity-100 shadow-xl transform transition-transform duration-300 " +
-          (isOpen ? "translate-x-0" : "-translate-x-full")
-        }
+      {/* Drawer with forced white background */}
+      <div 
+        style={{ backgroundColor: '#ffffff' }}
+        className="fixed top-0 left-0 z-[9999] h-full w-full sm:w-4/5 sm:max-w-sm bg-white shadow-xl transform transition-transform duration-300 flex flex-col overflow-hidden"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6">
-          <h2 className="text-xl font-semibold">Menu</h2>
+        <div className="flex items-center justify-between p-6 border-b border-gray-100">
+          <h2 className="text-xl font-semibold text-gray-900">Menu</h2>
           <Button 
             variant="ghost" 
             size="icon" 
@@ -63,16 +61,16 @@ export function MobileNav({ isOpen, onClose, navItems }: MobileNavProps) {
         </div>
 
         {/* Navigation Content */}
-        <nav className="flex-1 px-6 pb-6 overflow-y-auto">
+        <nav className="flex-1 px-6 py-4 overflow-y-auto bg-white">
           {/* Main Links */}
-          <div className="space-y-1 mb-8">
+          <div className="mb-6">
             {navItems.main.map((item, index) => (
               <Link
                 key={index}
                 href={item.href}
                 target={item.external ? "_blank" : "_self"}
                 rel={item.external ? "noopener noreferrer" : ""}
-                className="block py-3 text-base font-medium text-gray-900 hover:text-gray-600 transition-colors"
+                className="block py-2 text-base font-medium text-gray-900 hover:text-gray-600 transition-colors"
                 onClick={onClose}
               >
                 {item.label}
@@ -82,18 +80,18 @@ export function MobileNav({ isOpen, onClose, navItems }: MobileNavProps) {
 
           {/* Dropdown Sections */}
           {navItems.dropdowns.map((dropdown, index) => (
-            <div key={index} className="mb-8">
-              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
+            <div key={index} className="mb-6">
+              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-2">
                 {dropdown.label}
               </h3>
-              <div className="space-y-1">
+              <div>
                 {dropdown.items.map((item, itemIndex) => (
                   <Link
                     key={itemIndex}
                     href={item.href}
                     target={item.external ? "_blank" : "_self"}
                     rel={item.external ? "noopener noreferrer" : ""}
-                    className="block py-3 text-base text-gray-700 hover:text-gray-900 transition-colors"
+                    className="block py-2 text-base text-gray-700 hover:text-gray-900 transition-colors"
                     onClick={onClose}
                   >
                     {item.label}
@@ -105,7 +103,7 @@ export function MobileNav({ isOpen, onClose, navItems }: MobileNavProps) {
         </nav>
 
         {/* Footer with Give Button */}
-        <div className="p-6 border-t border-gray-100">
+        <div className="p-6 border-t border-gray-100 bg-white">
           <Button 
             asChild 
             size="lg" 
@@ -121,7 +119,7 @@ export function MobileNav({ isOpen, onClose, navItems }: MobileNavProps) {
             </Link>
           </Button>
         </div>
-      </aside>
-    </>
+      </div>
+    </Portal>
   );
 }

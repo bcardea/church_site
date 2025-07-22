@@ -35,21 +35,23 @@ export function TemplateB({
       <SiteHeader />
       
       {/* Sub Navigation */}
-      <nav className="bg-white border-b shadow-sm sticky top-16 z-40">
-        <div className="container">
-          <div className="flex items-center justify-center space-x-8 py-4 overflow-x-auto">
-            {subNavItems.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 whitespace-nowrap transition-all duration-200"
-              >
-                {item.label}
-              </Link>
-            ))}
+      {subNavItems.length > 0 && (
+        <nav className="border-b z-30">
+          <div className="container">
+            <div className="flex items-center justify-center space-x-8 py-4 overflow-x-auto">
+              {subNavItems.map((item, index) => (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="text-sm font-medium text-muted-foreground hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 whitespace-nowrap transition-all duration-200"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      )}
 
       <main className="flex-1">
         {/* Hero Section - Side by side layout */}
