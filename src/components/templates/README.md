@@ -1,6 +1,6 @@
 # Page Templates
 
-This folder contains 3 reusable page templates for the Lifepoint Hampton Roads website. Each template provides a different layout style while maintaining brand consistency.
+This folder contains 6 reusable page templates for the Lifepoint Hampton Roads website. Each template provides a different layout style while maintaining brand consistency.
 
 ## Template A - Full-Width Hero
 **File:** `template-a.tsx`
@@ -79,6 +79,33 @@ This folder contains 3 reusable page templates for the Lifepoint Hampton Roads w
   {/* Your content sections */}
 </TemplateC>
 ```
+
+## Template D - Split Hero
+**File:** `template-d.tsx`
+**Best for:** Photo-driven pages and event highlights
+
+**Features:**
+- Split hero with image background and text overlay
+- Light sticky sub-navigation
+- Clean content sections
+
+## Template E - Minimal Gradient
+**File:** `template-e.tsx`
+**Best for:** Announcements and informational pages
+
+**Features:**
+- Gradient hero background with optional image texture
+- Centered call to action
+- Simple navigation bar
+
+## Template F - Overlay Hero
+**File:** `template-f.tsx`
+**Best for:** Inspirational stories and special campaigns
+
+**Features:**
+- Full-height hero with dark overlay
+- Navigation placed below the hero
+- Works great for impactful imagery
 
 ## Common Props
 
