@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-
 import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -30,6 +29,7 @@ export function MobileNav({ isOpen, onClose, navItems }: MobileNavProps) {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+
   return (
     <>
       {/* Backdrop */}
@@ -44,43 +44,56 @@ export function MobileNav({ isOpen, onClose, navItems }: MobileNavProps) {
       {/* Drawer */}
       <aside
         className={
-          "fixed top-0 left-0 z-50 h-full w-4/5 max-w-xs bg-white shadow-xl transform transition-transform duration-300 " +
+          "fixed top-0 left-0 z-50 h-full w-full sm:w-4/5 sm:max-w-sm bg-white shadow-xl transform transition-transform duration-300 " +
           (isOpen ? "translate-x-0" : "-translate-x-full")
         }
       >
-        <div className="flex items-center justify-end p-4 border-b">
-          <Button variant="ghost" size="icon" aria-label="Close menu" onClick={onClose}>
-            <X className="h-6 w-6" />
+        {/* Header */}
+        <div className="flex items-center justify-between p-6">
+          <h2 className="text-xl font-semibold">Menu</h2>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            aria-label="Close menu" 
+            onClick={onClose}
+            className="hover:bg-gray-100 rounded-full"
+          >
+            <X className="h-5 w-5" />
           </Button>
         </div>
 
-        <nav className="flex-1 p-6 space-y-6 overflow-y-auto">
+        {/* Navigation Content */}
+        <nav className="flex-1 px-6 pb-6 overflow-y-auto">
           {/* Main Links */}
-          {navItems.main.map((item, index) => (
-            <Link
-              key={index}
-              href={item.href}
-              target={item.external ? "_blank" : "_self"}
-              rel={item.external ? "noopener noreferrer" : ""}
-              className="block text-lg font-medium hover:text-primary transition-colors"
-              onClick={onClose}
-            >
-              {item.label}
-            </Link>
-          ))}
+          <div className="space-y-1 mb-8">
+            {navItems.main.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                target={item.external ? "_blank" : "_self"}
+                rel={item.external ? "noopener noreferrer" : ""}
+                className="block py-3 text-base font-medium text-gray-900 hover:text-gray-600 transition-colors"
+                onClick={onClose}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
 
-          {/* Dropdown Links */}
+          {/* Dropdown Sections */}
           {navItems.dropdowns.map((dropdown, index) => (
-            <div key={index}>
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">{dropdown.label}</h3>
-              <div className="pl-4 space-y-3 border-l border-gray-200">
+            <div key={index} className="mb-8">
+              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
+                {dropdown.label}
+              </h3>
+              <div className="space-y-1">
                 {dropdown.items.map((item, itemIndex) => (
                   <Link
                     key={itemIndex}
                     href={item.href}
                     target={item.external ? "_blank" : "_self"}
                     rel={item.external ? "noopener noreferrer" : ""}
-                    className="block text-base text-gray-600 hover:text-primary transition-colors"
+                    className="block py-3 text-base text-gray-700 hover:text-gray-900 transition-colors"
                     onClick={onClose}
                   >
                     {item.label}
@@ -91,9 +104,19 @@ export function MobileNav({ isOpen, onClose, navItems }: MobileNavProps) {
           ))}
         </nav>
 
-        <div className="p-6 border-t">
-          <Button asChild size="lg" className="w-full rounded-full bg-gray-900 text-white hover:bg-gray-800">
-            <Link href="https://lifepointhamptonroads.churchcenter.com/giving" target="_blank" rel="noopener noreferrer" onClick={onClose}>
+        {/* Footer with Give Button */}
+        <div className="p-6 border-t border-gray-100">
+          <Button 
+            asChild 
+            size="lg" 
+            className="w-full rounded-full bg-black text-white hover:bg-gray-800 font-medium"
+          >
+            <Link 
+              href="https://lifepointhamptonroads.churchcenter.com/giving" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              onClick={onClose}
+            >
               GIVE
             </Link>
           </Button>
