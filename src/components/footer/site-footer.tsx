@@ -24,9 +24,9 @@ export function SiteFooter() {
           <div className="space-y-4">
             <h3 className="font-bold uppercase tracking-wider text-sm">About</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-white/70 hover:text-white text-sm transition-colors">Who We Are</Link></li>
-              <li><Link href="/about#leadership" className="text-white/70 hover:text-white text-sm transition-colors">Leadership</Link></li>
-              <li><Link href="/about#beliefs" className="text-white/70 hover:text-white text-sm transition-colors">Beliefs</Link></li>
+              <li><Link href="/our-beliefs" className="text-white/70 hover:text-white text-sm transition-colors">Who We Are</Link></li>
+              <li><Link href="/our-pastors" className="text-white/70 hover:text-white text-sm transition-colors">Leadership</Link></li>
+              <li><Link href="/our-mission" className="text-white/70 hover:text-white text-sm transition-colors">Beliefs</Link></li>
             </ul>
           </div>
 
