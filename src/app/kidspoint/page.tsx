@@ -110,7 +110,7 @@ export default function KidspointPage() {
             </p>
             <div className="mt-10">
               <a
-                href="https://findlifepoint.church/#:~:text=visit%20even%20smoother!-,Pre%2DRegister%20Your%20Child,-Have%20questions%3F%20Email"
+                href="https://lifepointhamptonroads.churchcenter.com/people/forms/482940?id=482940"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block rounded-full bg-teal-600 px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
