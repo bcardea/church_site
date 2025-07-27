@@ -23,6 +23,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'saltassets.b-cdn.net',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
