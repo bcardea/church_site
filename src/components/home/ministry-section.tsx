@@ -134,7 +134,7 @@ export function MinistrySection() {
             title="Get connected with Lifepoint"
             tagline=""
             ministry="Connect"
-            linkHref="/connect-with-us"
+            linkHref="/connect"
             bgColor=""
             textColor="text-white"
           />

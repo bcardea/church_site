@@ -234,7 +234,7 @@ export default async function DynamicPage({ params }: { params: { slug: string }
   let finalData = pageData;
   if (params.slug === 'im-new') {
     const newLink =
-      'https://lifepointhamptonroads.churchcenter.com/people/forms/498266';
+      'https://lifepointhamptonroads.churchcenter.com/people/forms/482940?id=482940';
     finalData = {
       ...pageData,
       cta_href: newLink,
