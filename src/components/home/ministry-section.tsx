@@ -36,8 +36,8 @@ function MinistryCard({
         />
       )}
 
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 opacity-30 bg-gradient-to-br from-white/10 to-black/20 z-10"></div>
+      {/* Darker overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       {/* Decorative elements */}
       <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-white/10 blur-2xl z-20"></div>
