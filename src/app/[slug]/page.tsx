@@ -3,6 +3,9 @@ import { supabaseAdmin } from '@/lib/supabase/admin';
 import { TemplateA } from '@/components/templates/template-a';
 import { TemplateB } from '@/components/templates/template-b';
 import { TemplateC } from '@/components/templates/template-c';
+import { TemplateD } from '@/components/templates/template-d';
+import { TemplateE } from '@/components/templates/template-e';
+import { TemplateF } from '@/components/templates/template-f';
 import { notFound } from 'next/navigation';
 
 import { FaqBlock } from '@/components/content-blocks/faq-block';
@@ -208,6 +211,13 @@ function PageTemplate({ data }: { data: PageData }) {
       case 'TemplateB':
         return <TemplateB {...templateProps} />;
       case 'TemplateC':
+        return <TemplateC {...templateProps} />;
+      case 'TemplateD':
+        return <TemplateD {...templateProps} />;
+      case 'TemplateE':
+        return <TemplateE {...templateProps} />;
+      case 'TemplateF':
+        return <TemplateF {...templateProps} />;
       default:
         return <TemplateC {...templateProps} />;
     }
