@@ -242,7 +242,21 @@ export default async function DynamicPage({ params }: { params: { slug: string }
     return notFound();
   }
 
-  return <PageTemplate data={pageData} />;
+  let finalData = pageData;
+  if (params.slug === 'im-new') {
+    const newLink =
+      'https://lifepointhamptonroads.churchcenter.com/people/forms/482940?id=482940';
+    finalData = {
+      ...pageData,
+      cta_href: newLink,
+      content_blocks: pageData.content_blocks?.map((block) =>
+        block.type === 'cta_block'
+          ? { ...block, button_href: newLink }
+          : block
+      ),
+    } as PageData;
+  }
+  return <PageTemplate data={finalData} />;
 }
 
 export const revalidate = 60; // Revalidate every 60 seconds

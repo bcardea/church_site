@@ -34,7 +34,7 @@ export default function KidspointPage() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="lg:order-last">
                 <Image
-                  src="/images/kidspoint-gallery-1.jpg"
+                  src="https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images//kp2.jpg"
                   alt="Kids learning in a classroom setting"
                   width={600}
                   height={500}
@@ -59,7 +59,7 @@ export default function KidspointPage() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
                 <Image
-                  src="/images/kidspoint-gallery-2.jpg"
+                  src="https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images//kp1.jpg"
                   alt="Children listening to a story"
                   width={600}
                   height={500}
@@ -84,7 +84,7 @@ export default function KidspointPage() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="lg:order-last">
                 <Image
-                  src="/images/kidspoint-gallery-3.jpg"
+                  src="https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images//kp3.jpg"
                   alt="Infants and toddlers playing safely"
                   width={600}
                   height={500}
@@ -110,7 +110,7 @@ export default function KidspointPage() {
             </p>
             <div className="mt-10">
               <a
-                href="https://findlifepoint.church/#:~:text=visit%20even%20smoother!-,Pre%2DRegister%20Your%20Child,-Have%20questions%3F%20Email"
+                href="https://lifepointhamptonroads.churchcenter.com/people/forms/482940?id=482940"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block rounded-full bg-teal-600 px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
