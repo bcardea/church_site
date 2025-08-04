@@ -34,7 +34,7 @@ interface CtaBlockData {
 interface TextBlockData {
   type: 'text_block';
   title?: string | null;
-  content: string;
+  content: string | string[];
 }
 
 interface Belief {
@@ -184,11 +184,20 @@ function PageTemplate({ data }: { data: PageData }) {
 
   const pageStyle = accent_color ? { '--page-accent-color': accent_color } as React.CSSProperties : {};
 
-  const PageContent = () => (
-    <>
-      {content_blocks && content_blocks.map((block, index) => renderContentBlock(block, index))}
-    </>
-  );
+  const PageContent = () => {
+    // Check if description is a content block and should be rendered as such
+    let descriptionBlock = null;
+    if (description && typeof description === 'object' && 'type' in description) {
+      descriptionBlock = renderContentBlock(description as ContentBlock, -1);
+    }
+
+    return (
+      <>
+        {descriptionBlock}
+        {content_blocks && content_blocks.map((block, index) => renderContentBlock(block, index))}
+      </>
+    );
+  };
 
   const renderTemplate = () => {
     // Handle JSONB description format
@@ -197,8 +206,13 @@ function PageTemplate({ data }: { data: PageData }) {
       if (typeof description === 'string') {
         processedDescription = description;
       } else if (typeof description === 'object' && description !== null) {
-        // Handle JSONB format with content field
-        processedDescription = (description as any).content || undefined;
+        // If it's a content block structure, don't include it in the hero description
+        if ('type' in description) {
+          processedDescription = undefined; // Will be rendered as content block instead
+        } else {
+          // Handle simple JSONB format with content field
+          processedDescription = (description as any).content || undefined;
+        }
       }
     }
 
