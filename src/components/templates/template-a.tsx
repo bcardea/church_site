@@ -97,11 +97,38 @@ export function TemplateA({
               </h1>
               
               {description && (
-                <p className={`text-lg md:text-xl leading-relaxed mb-10 max-w-3xl mx-auto ${
-                  heroImage ? 'text-white/90' : 'text-gray-600'
-                }`}>
-                  {description}
-                </p>
+                <div className="mb-10 max-w-3xl mx-auto">
+                  {typeof description === 'string' ? (
+                    <p className={`text-lg md:text-xl leading-relaxed ${
+                      heroImage ? 'text-white/90' : 'text-gray-600'
+                    }`}>
+                      {description}
+                    </p>
+                  ) : (
+                    <div>
+                      {description.title && (
+                        <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${
+                          heroImage ? 'text-white' : 'text-gray-900'
+                        }`}>{description.title}</h2>
+                      )}
+                      {Array.isArray(description.content) ? (
+                        <div className="space-y-2">
+                          {description.content.map((line, index) => (
+                            <p key={index} className={`text-lg md:text-xl leading-relaxed ${
+                              heroImage ? 'text-white/90' : 'text-gray-600'
+                            }`}>
+                              {line}
+                            </p>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className={`text-lg md:text-xl leading-relaxed ${
+                          heroImage ? 'text-white/90' : 'text-gray-600'
+                        }`}>{description.content}</p>
+                      )}
+                    </div>
+                  )}
+                </div>
               )}
               
               {ctaText && ctaHref && (
