@@ -34,7 +34,7 @@ export default function KidspointPage() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="lg:order-last">
                 <Image
-                  src="/images/kidspoint-gallery-1.jpg"
+                  src="https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images//kp2.jpg"
                   alt="Kids learning in a classroom setting"
                   width={600}
                   height={500}
@@ -59,7 +59,7 @@ export default function KidspointPage() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
                 <Image
-                  src="/images/kidspoint-gallery-2.jpg"
+                  src="https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images//kp1.jpg"
                   alt="Children listening to a story"
                   width={600}
                   height={500}
@@ -84,7 +84,7 @@ export default function KidspointPage() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div className="lg:order-last">
                 <Image
-                  src="/images/kidspoint-gallery-3.jpg"
+                  src="https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images//kp3.jpg"
                   alt="Infants and toddlers playing safely"
                   width={600}
                   height={500}
