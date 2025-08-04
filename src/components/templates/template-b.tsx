@@ -12,7 +12,7 @@ interface SubNavItem {
 interface TemplateBProps {
   title: string;
   subtitle?: string;
-  description?: string;
+  description?: string | { type: string; title?: string; content: string | string[] };
   heroImage?: string;
   subNavItems: SubNavItem[];
   children: ReactNode;
@@ -68,9 +68,30 @@ export function TemplateB({
                   {title}
                 </h1>
                 {description && (
-                  <p className="text-lg text-muted-foreground mb-8">
-                    {description}
-                  </p>
+                  <div className="mb-8">
+                    {typeof description === 'string' ? (
+                      <p className="text-lg text-muted-foreground">
+                        {description}
+                      </p>
+                    ) : (
+                      <div>
+                        {description.title && (
+                          <h2 className="text-2xl font-bold mb-4 text-gray-900">{description.title}</h2>
+                        )}
+                        {Array.isArray(description.content) ? (
+                          <div className="space-y-2">
+                            {description.content.map((line, index) => (
+                              <p key={index} className="text-lg text-muted-foreground">
+                                {line}
+                              </p>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-lg text-muted-foreground">{description.content}</p>
+                        )}
+                      </div>
+                    )}
+                  </div>
                 )}
                 {ctaText && ctaHref && (
                   <Button asChild size="lg" className="rounded-full">

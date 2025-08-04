@@ -12,7 +12,7 @@ interface SubNavItem {
 interface TemplateAProps {
   title: string;
   subtitle?: string;
-  description?: string;
+  description?: string | { type: string; title?: string; content: string | string[] };
   heroImage?: string;
   subNavItems: SubNavItem[];
   children: ReactNode;
