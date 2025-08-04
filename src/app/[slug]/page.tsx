@@ -191,10 +191,21 @@ function PageTemplate({ data }: { data: PageData }) {
   );
 
   const renderTemplate = () => {
+    // Handle JSONB description format
+    let processedDescription: string | undefined;
+    if (description) {
+      if (typeof description === 'string') {
+        processedDescription = description;
+      } else if (typeof description === 'object' && description !== null) {
+        // Handle JSONB format with content field
+        processedDescription = (description as any).content || undefined;
+      }
+    }
+
     const templateProps = {
       title,
       subtitle: subtitle || undefined,
-      description: description || undefined,
+      description: processedDescription,
       ctaText: cta_text || undefined,
       ctaHref: cta_href || undefined,
       heroImage: hero_image_url || undefined,
