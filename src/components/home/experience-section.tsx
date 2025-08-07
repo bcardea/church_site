@@ -42,7 +42,7 @@ export function ExperienceSection() {
             title="Watch our Services"
             description="Experience previous services at Lifepoint"
             linkText="Watch Now"
-            linkHref="https://www.youtube.com/@LifepointHamptonRoads"
+            linkHref="https://www.youtube.com/@Lifepoint_HamptonRoads"
           />
           <ExperienceCard
             title="Plan Your Visit"
