@@ -59,7 +59,7 @@ export default function KidspointPage() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
                 <Image
-                  src="https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images//kp1.jpg"
+                  src="https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images/DSC00284.jpg"
                   alt="Children listening to a story"
                   width={600}
                   height={500}
@@ -120,7 +120,7 @@ export default function KidspointPage() {
               </a>
             </div>
             <p className="mt-8 text-sm text-gray-500">
-              Have questions? Email us at <a href="mailto:kidspoint@lifepointhamptonroads.org" className="font-medium text-teal-600 hover:text-teal-500" style={{ color: '#0d9488' }}>kidspoint@lifepointhamptonroads.org</a>
+              Have questions? Email us at <a href="mailto:info@lifepointhamptonroads.org" className="font-medium text-teal-600 hover:text-teal-500" style={{ color: '#0d9488' }}>info@lifepointhamptonroads.org</a>
             </p>
           </div>
         </section>
