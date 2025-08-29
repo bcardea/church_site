@@ -79,7 +79,7 @@ export function MinistrySection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <MinistryCard
-            image="https://saltassets.b-cdn.net/lchr/DSC00780.jpg"
+            image="https://saltassets.b-cdn.net/lchr/DSC00780_.jpg"
             title="Join the Team, Live out your Purpose"
             tagline=""
             ministry="Join the Team"
@@ -88,7 +88,7 @@ export function MinistrySection() {
             textColor="text-white"
           />
           <MinistryCard
-            image="https://saltassets.b-cdn.net/lchr/DSC09748.jpg"
+            image="https://saltassets.b-cdn.net/lchr/DSC09748_.jpg"
             title="Find your next group"
             tagline=""
             ministry="Small Groups"
