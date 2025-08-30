@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     siteName: 'Lifepoint Hampton Roads',
     images: [
       {
+        url: 'https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images/LIFEPOINTPREVIEW%201200x1200.png',
+        width: 1200,
+        height: 1200,
+        alt: 'Lifepoint Hampton Roads - 600 Jarman Rd, Chesapeake, VA - Sundays at 10AM',
+      },
+      {
         url: 'https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images/LIFEPOINTPREVIEW.jpg',
         width: 1200,
         height: 630,
         alt: 'Lifepoint Hampton Roads - 600 Jarman Rd, Chesapeake, VA - Sundays at 10AM',
-      },
-      {
-        url: 'https://qgpyljnhjvoaatxsyygy.supabase.co/storage/v1/object/public/images/Lifepoint%20Preview%20(1080%20x%201080%20px).jpg',
-        width: 1080,
-        height: 1080,
-        alt: 'Lifepoint Hampton Roads',
       },
     ],
     locale: 'en_US',
